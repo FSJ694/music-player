@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>音乐播放器 - 冯少君</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 简洁背景 - 不需要视频 -->
+<div class="simple-bg"></div>
+
+<!-- 播放器主体 -->
+<div class="player-container">
+    <div class="player-card">
+        
+        <!-- 头部标题 + 学号姓名 -->
+        <div class="player-header">
+            <h1>
+                <span class="music-icon">🎵</span> 
+                音乐在线播放器
+            </h1>
+            <div class="student-info">
+                📖 学号：24215220212 | 姓名：冯少君
+            </div>
+        </div>
+
+        <!-- 专辑封面区域（圆形唱片） -->
+        <div class="cd-area">
+            <div class="cd-disc" id="cdDisc">
+                <img id="albumCover" src="img/record0.jpg" alt="专辑封面">
+                <div class="cd-center"></div>
+            </div>
+            <!-- 音乐波形动画（播放时显示） -->
+            <div class="music-wave" id="musicWave">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- 歌曲信息 -->
+        <div class="song-info">
+            <h2 id="songTitle">歌曲0</h2>
+            <p id="songArtist">歌手0</p>
+        </div>
+
+        <!-- 进度条区域 -->
+        <div class="progress-section">
+            <span class="time" id="currentTime">0:00</span>
+            <div class="progress-bar-wrapper">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+            <span class="time" id="duration">0:00</span>
+        </div>
+
+        <!-- 控制按钮区域 -->
+        <div class="controls">
+            <button id="prevBtn" class="control-btn" title="上一曲">
+                <i class="control-icon">⏮</i>
+            </button>
+            <button id="playPauseBtn" class="control-btn play-btn" title="播放/暂停">
+                <i class="control-icon" id="playPauseIcon">▶</i>
+            </button>
+            <button id="nextBtn" class="control-btn" title="下一曲">
+                <i class="control-icon">⏭</i>
+            </button>
+        </div>
+
+        <!-- 音量控制 -->
+        <div class="volume-section">
+            <button id="volumeBtn" class="volume-icon-btn" title="静音/取消静音">
+                <span id="volumeIcon">🔊</span>
+            </button>
+            <div class="volume-bar-wrapper">
+                <div class="volume-bar" id="volumeBar">
+                    <div class="volume-fill" id="volumeFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 播放列表按钮 -->
+        <div class="playlist-btn-wrap">
+            <button id="showPlaylistBtn" class="playlist-btn">
+                📋 播放列表 <span class="playlist-count">(4首)</span>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- 播放列表弹窗 -->
+<div id="playlistModal" class="playlist-modal">
+    <div class="playlist-content">
+        <div class="playlist-header">
+            <h3>📋 播放列表</h3>
+            <button id="closePlaylistBtn" class="close-btn">&times;</button>
+        </div>
+        <ul id="playlistList">
+            <!-- 歌曲列表由JavaScript动态生成 -->
+        </ul>
+    </div>
+</div>
+
+<!-- 音频元素 -->
+<audio id="audio" src="mp3/music0.mp3"></audio>
+
+<script src="js/script.js"></script>
+</body>
+</html>
